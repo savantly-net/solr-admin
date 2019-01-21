@@ -6,11 +6,11 @@
     <mat-toolbar><div class="logo"></div></mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="index"><fa-icon icon="tachometer-alt"></fa-icon>Dashboard</a>
-      <a mat-list-item href="#"><fa-icon icon="file"></fa-icon>Logging</a>
-      <a mat-list-item href="#"><fa-icon icon="cloud"></fa-icon>Cloud</a>
-      <a mat-list-item href="#"><fa-icon icon="boxes"></fa-icon>Collections</a>
-      <a mat-list-item href="#"><fa-icon [icon]="['fab', 'java']"></fa-icon>Java Properties</a>
-      <a mat-list-item href="#"><fa-icon icon="poop"></fa-icon>Thread Dump</a>
+      <a mat-list-item routerLink="logging"><fa-icon icon="file"></fa-icon>Logging</a>
+      <a mat-list-item ><fa-icon icon="cloud"></fa-icon>Cloud</a>
+      <a mat-list-item routerLink="collections"><fa-icon icon="boxes"></fa-icon>Collections</a>
+      <a mat-list-item routerLink="java-props"><fa-icon [icon]="['fab', 'java']"></fa-icon>Java Properties</a>
+      <a mat-list-item routerLink="thread-dump"><fa-icon icon="poop"></fa-icon>Thread Dump</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
