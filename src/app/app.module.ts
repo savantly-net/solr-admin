@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppLayoutModule } from './app-layout/app-layout.module';
 import { PagesModule } from './pages/pages.module';
 import { IconsModule } from './icons/icons.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { IconsModule } from './icons/icons.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     IconsModule,
     AppLayoutModule,
     PagesModule

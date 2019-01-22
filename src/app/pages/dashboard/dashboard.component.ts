@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../../services/system/system.service';
+import { SolrSystemResponse } from '../../domain/solr-system-response';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+    data: SolrSystemResponse;
 
-  constructor() { }
+  constructor(private systemService: SystemService) { }
 
   ngOnInit() {
+    this.systemService.getData().subscribe(
+        response => {
+        this.data = response;
+        },
+        err => {
+            console.error(err);
+        }
+    );
   }
 
 }

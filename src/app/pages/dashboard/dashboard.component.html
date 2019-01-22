@@ -1,3 +1,12 @@
-<p>
-  dashboard works!
-</p>
+<div fxLayout>
+    <div fxFlex fxLayout="column">
+        <div>
+            <mat-toolbar>Instance</mat-toolbar>
+            <label>Start</label> <span></span>
+        </div>
+        <div>
+            <mat-toolbar>Versions</mat-toolbar>
+            <label>solr-spec</label> <span>{{data.lucene['solr-spec-version']}}</span>
+        </div>
+    </div>
+</div>

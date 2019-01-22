@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SolrService } from '../solr.service';
-import { SystemData } from './system-data';
+import { SolrSystemResponse } from '../../domain/solr-system-response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class SystemService extends SolrService {
       super();
   }
 
-  getInfo() {
-      return this.http.get<SystemData>(this.baseUrl + this.path);
+  getData() {
+      return this.http.get<SolrSystemResponse>(this.baseUrl + this.path);
   }
 }
