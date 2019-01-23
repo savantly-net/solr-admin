@@ -8,13 +8,13 @@ import { SolrSystemResponse } from '../../domain/solr-system-response';
 })
 export class SystemService extends SolrService {
 
-    path = '/admin/info/system';
+    path = '/solr/admin/info/system';
 
   constructor(private http: HttpClient) {
       super();
   }
 
   getData() {
-      return this.http.get<SolrSystemResponse>(this.baseUrl + this.path);
+      return this.http.get<SolrSystemResponse>(this.path);
   }
 }

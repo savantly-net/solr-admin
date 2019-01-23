@@ -9,6 +9,7 @@ import { JavaPropsComponent } from './java-props/java-props.component';
 import { ThreadDumpComponent } from './thread-dump/thread-dump.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [DashboardComponent, LoggingComponent, CloudConfigsComponent,
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    MomentModule
   ]
 })
 export class PagesModule { }

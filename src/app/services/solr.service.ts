@@ -5,7 +5,5 @@ import { Injectable } from '@angular/core';
 })
 export class SolrService {
 
-    baseUrl: 'http://localhost:8983';
-
   constructor() { }
 }
