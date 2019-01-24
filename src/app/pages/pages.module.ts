@@ -10,6 +10,8 @@ import { ThreadDumpComponent } from './thread-dump/thread-dump.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { MomentModule } from 'ngx-moment';
+import { DialogsModule } from '../dialogs/dialogs.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [DashboardComponent, LoggingComponent, CloudConfigsComponent,
@@ -18,7 +20,9 @@ import { MomentModule } from 'ngx-moment';
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    MomentModule
+    FontAwesomeModule,
+    MomentModule,
+    DialogsModule
   ]
 })
 export class PagesModule { }

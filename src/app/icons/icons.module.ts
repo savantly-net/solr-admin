@@ -9,7 +9,8 @@ import {
     faCloud,
     faBoxes,
     faBars,
-    faPoop
+    faPoop,
+    faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faJava } from '@fortawesome/free-brands-svg-icons';
 
@@ -32,6 +33,7 @@ export class IconsModule {
             faBoxes,
             faBars,
             faPoop,
+            faInfoCircle,
             // Brands
             faJava);
     }

@@ -8,6 +8,7 @@ import { AppLayoutModule } from './app-layout/app-layout.module';
 import { PagesModule } from './pages/pages.module';
 import { IconsModule } from './icons/icons.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppLayoutModule,
     PagesModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

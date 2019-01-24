@@ -1,33 +1,14 @@
 <div fxLayout>
     <div fxFlex fxLayout="column">
         <div>
-            <mat-toolbar>Instance started {{data?.jvm.jmx.startTime | amTimeAgo }}</mat-toolbar>
+            <mat-toolbar>
+                 <a (click)="openSolrVersionDialog()"><fa-icon icon="info-circle"></fa-icon></a>
+                 Solr v{{data?.lucene['solr-spec-version']}} started {{data?.jvm.jmx.startTime | amTimeAgo }}
+            </mat-toolbar>
         </div>
         <div fxLayout fxFlexFill class="container">
             <div>
-                <mat-card class="versions">
-                    <mat-card-title>Versions</mat-card-title>
-                    <mat-card-content>
-                        <table mat-table>
-                            <tr>
-                                <td>solr-spec:</td>
-                                <td>{{data?.lucene['solr-spec-version']}}</td>
-                            </tr>
-                            <tr>
-                                <td>solr-impl:</td>
-                                <td>{{data?.lucene['solr-impl-version']}}</td>
-                            </tr>
-                            <tr>
-                                <td>lucene-spec:</td>
-                                <td>{{data?.lucene['lucene-spec-version']}}</td>
-                            </tr>
-                            <tr>
-                                <td>lucene-impl:</td>
-                                <td>{{data?.lucene['lucene-impl-version']}}</td>
-                            </tr>
-                        </table>
-                    </mat-card-content>
-                </mat-card>
+
             </div>
             <mat-card fxFlex class="system">
                 <mat-card-title>System</mat-card-title>
