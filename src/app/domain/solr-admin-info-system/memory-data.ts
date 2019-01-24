@@ -3,4 +3,5 @@ export class MemoryData {
     max: string;
     total: string;
     used: string;
+    raw: any;
 }

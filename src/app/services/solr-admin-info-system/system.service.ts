@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SolrService } from '../solr.service';
-import { SolrSystemResponse } from '../../domain/solr-system-response';
+import { SolrSystemResponse } from '../../domain/solr-admin-info-system/solr-system-response';
 
 @Injectable({
   providedIn: 'root'

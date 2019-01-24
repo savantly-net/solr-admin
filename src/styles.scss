@@ -15,3 +15,7 @@ a fa-icon {
 mat-progress-bar.mat-progress-bar {
     height: 20px;
 }
+
+mat-grid-tile > .mat-figure > mat-card {
+    width: 100%;
+}

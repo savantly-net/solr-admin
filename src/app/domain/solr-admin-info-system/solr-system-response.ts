@@ -1,6 +1,6 @@
 import { JvmData } from './jvm-data';
 import { LuceneData } from './lucene-data';
-import { SolrResponseHeader } from './solr-response-header';
+import { SolrResponseHeader } from '../solr-response-header';
 import { SystemData } from './system-data';
 
 export class SolrSystemResponse {

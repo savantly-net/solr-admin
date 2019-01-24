@@ -12,17 +12,21 @@ import { MaterialModule } from '../material/material.module';
 import { MomentModule } from 'ngx-moment';
 import { DialogsModule } from '../dialogs/dialogs.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ComponentsModule } from '../components/components.module';
+import { NgMathPipesModule } from 'angular-pipes';
 
 @NgModule({
-  declarations: [DashboardComponent, LoggingComponent, CloudConfigsComponent,
+    declarations: [DashboardComponent, LoggingComponent, CloudConfigsComponent,
         CloudGraphComponent, CollectionsComponent, JavaPropsComponent, ThreadDumpComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    MaterialModule,
-    FontAwesomeModule,
-    MomentModule,
-    DialogsModule
-  ]
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        MaterialModule,
+        FontAwesomeModule,
+        MomentModule,
+        DialogsModule,
+        ComponentsModule,
+        NgMathPipesModule
+    ]
 })
 export class PagesModule { }

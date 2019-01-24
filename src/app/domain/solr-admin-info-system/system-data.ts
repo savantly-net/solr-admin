@@ -1,6 +1,6 @@
 export class SystemData {
     arch: string;
-    avaiableProcessors: number;
+    availableProcessors: number;
     committedVirtualMemorySize: number;
     freePhysicalMemorySize: number;
     freeSwapSpaceSize: number;
@@ -11,7 +11,7 @@ export class SystemData {
     processCpuTime: number;
     systemCpuLoad: string;
     systemLoadAverage: number;
-    totalPhyscalMemorySize: number;
+    totalPhysicalMemorySize: number;
     totalSwapSpaceSize: number;
     uname: string;
     version: string;
