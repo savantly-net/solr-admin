@@ -6,6 +6,8 @@ import { SolrVersionDialogComponent } from '../../dialogs/solr-version-dialog/so
 import { SystemData } from '../../domain/solr-admin-info-system/system-data';
 import { JvmData } from '../../domain/solr-admin-info-system/jvm-data';
 import { InfoDialogComponent } from '../../dialogs/info-dialog/info-dialog.component';
+import { BytesPipe } from 'angular-pipes';
+import { SolrAdminMetricsService } from '../../services/solr-admin-metrics/solr-admin-metrics.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -16,6 +18,12 @@ export class DashboardComponent implements OnInit {
     data: SolrSystemResponse;
     systemData: SystemData;
     jvmData: JvmData;
+
+    jvmMetrics: any;
+
+    colorScheme = {
+        domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    };
 
     // System memory
     totalPhysicalMemory: number;
@@ -32,7 +40,7 @@ export class DashboardComponent implements OnInit {
     fileDescriptorUtilization: number;
 
 
-    constructor(private systemService: SystemService, public dialog: MatDialog) { }
+    constructor(private systemService: SystemService, private metrics: SolrAdminMetricsService, public dialog: MatDialog) { }
 
     ngOnInit() {
         this.systemService.getData().subscribe(
@@ -42,6 +50,12 @@ export class DashboardComponent implements OnInit {
             err => {
                 console.error(err);
             }
+        );
+        this.metrics.getJvmData().subscribe(
+            response => {
+                this.jvmMetrics = response.metrics['solr.jvm'];
+            },
+            err => { console.error(err); }
         );
     }
 
@@ -63,6 +77,15 @@ export class DashboardComponent implements OnInit {
         this.usedSwapSpace = system.totalSwapSpaceSize - system.freeSwapSpaceSize;
         this.usedSwapSpacePercent = 100 * (this.usedSwapSpace / system.totalSwapSpaceSize);
         this.processCpuUtilization = 100 * (system.processCpuLoad / system.availableProcessors);
+    }
+
+    // Formatters
+    valueAsPercent(value) {
+        return `${Math.round(value).toLocaleString()}%`;
+    }
+
+    valueAsMemorySize(value) {
+        return new BytesPipe().transform(value);
     }
 
     openSolrVersionDialog(): void {

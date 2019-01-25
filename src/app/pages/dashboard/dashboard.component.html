@@ -9,35 +9,48 @@
       </mat-toolbar>
     </div>
     <div fxLayout class="container">
-      <div fxLayout fxLayoutGap="10px" class="card-row">
-        <mat-card fxFlexFill>
+      <div fxLayout="column" fxFill fxLayoutGap="10px" class="card-row">
+        <mat-card fxFlex>
           <mat-card-title>Operating System</mat-card-title>
           <mat-card-content>
-            <app-progress label="CPU cores:{{systemData?.availableProcessors}}, utlilization:{{cpuUtilization | round}}%" [value]="cpuUtilization">
-            </app-progress>
-            <app-progress label="Physical Memory: {{usedPhysicalMemoryPercent | round}}% [{{usedPhysicalMemory | bytes}}]" [value]="usedPhysicalMemoryPercent"
-              max="{{totalPhysicalMemory| bytes}}">
-            </app-progress>
-            <app-progress label="File Descriptors: {{fileDescriptorUtilization | round}}% [{{systemData?.openFileDescriptorCount}}]"
-              [value]="fileDescriptorUtilization" [max]="systemData?.maxFileDescriptorCount">
-            </app-progress>
-            <app-progress label="Swap Space: {{usedSwapSpacePercent | round}}% [{{usedSwapSpace | bytes}}]" [value]="usedSwapSpacePercent"
-              max="{{systemData?.totalSwapSpaceSize | bytes}}">
-            </app-progress>
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="cpuUtilization" [results]="[{name: 'cpu', value: cpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>CPU Utlilization</label>
+              </div>
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="usedPhysicalMemoryPercent" [results]="[{name: 'b', value: usedPhysicalMemoryPercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Physical Memory {{usedPhysicalMemory | bytes}}/{{totalPhysicalMemory | bytes}}</label>
+              </div>
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="fileDescriptorUtilization" [results]="[{name: 'fileDescriptors', value: fileDescriptorUtilization}]"
+                  [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>File Descriptors {{systemData?.openFileDescriptorCount}}/{{systemData?.maxFileDescriptorCount}}</label>
+              </div>
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="usedSwapSpacePercent" [results]="[{name: 'swapSpace', value: usedSwapSpacePercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Used Swap {{usedSwapSpace | bytes: 2}}/{{systemData?.totalSwapSpaceSize | bytes}}</label>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
-        <mat-card fxFlexFill>
+        <mat-card fxFlex>
           <mat-card-title>JVM
             <a (click)="openJVMDialog()">
               <fa-icon icon="info-circle"></fa-icon>
             </a>
           </mat-card-title>
           <mat-card-content>
-            <app-progress label="CPU cores:{{systemData?.availableProcessors}}, utlilization:{{processCpuUtilization | round}}%" [value]="processCpuUtilization">
-            </app-progress>
-            <app-progress label="Heap Memory: {{jvmData?.memory.raw['used%'] | round}}%, used:{{jvmData?.memory.raw['used'] | bytes}}, allocated:{{jvmData?.memory.raw['total'] | bytes}}"
-              [value]="jvmData?.memory.raw['used%']" max="{{jvmData?.memory.raw['max'] | bytes}}">
-            </app-progress>
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="processCpuUtilization" [results]="[{name: 'cpu', value: processCpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Process CPU Utlilization</label>
+              </div>
+              <div class="chart-container">
+                <ngx-charts-gauge *ngIf="usedPhysicalMemoryPercent" [results]="[{name: 'b', value: usedPhysicalMemoryPercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Physical Memory {{usedPhysicalMemory | bytes}}/{{totalPhysicalMemory | bytes}}</label>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
       </div>

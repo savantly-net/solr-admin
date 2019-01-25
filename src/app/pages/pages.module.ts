@@ -14,6 +14,7 @@ import { DialogsModule } from '../dialogs/dialogs.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ComponentsModule } from '../components/components.module';
 import { NgMathPipesModule } from 'angular-pipes';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
     declarations: [DashboardComponent, LoggingComponent, CloudConfigsComponent,
@@ -26,7 +27,8 @@ import { NgMathPipesModule } from 'angular-pipes';
         MomentModule,
         DialogsModule,
         ComponentsModule,
-        NgMathPipesModule
+        NgMathPipesModule,
+        NgxChartsModule
     ]
 })
 export class PagesModule { }
