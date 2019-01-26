@@ -11,25 +11,30 @@
     <div fxLayout class="container">
       <div fxLayout="column" fxFill fxLayoutGap="10px" class="card-row">
         <mat-card fxFlex>
-          <mat-card-title>Operating System</mat-card-title>
+          <mat-card-title>Operating System:
+            <span *ngIf="jvmMetrics">{{jvmMetrics['os.name']}}</span>
+          </mat-card-title>
           <mat-card-content>
             <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
-              <div class="chart-container">
-                <ngx-charts-gauge *ngIf="cpuUtilization" [results]="[{name: 'cpu', value: cpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+              <div class="chart-container" *ngIf="cpuUtilization">
+                <ngx-charts-gauge [results]="[{name: 'cpu', value: cpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
                 <label>CPU Utlilization</label>
               </div>
-              <div class="chart-container">
-                <ngx-charts-gauge *ngIf="usedPhysicalMemoryPercent" [results]="[{name: 'b', value: usedPhysicalMemoryPercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+              <div class="chart-container" *ngIf="processCpuUtilization">
+                <ngx-charts-gauge [results]="[{name: 'cpu', value: processCpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Solr CPU Utlilization</label>
+              </div>
+              <div class="chart-container" *ngIf="usedPhysicalMemoryPercent">
+                <ngx-charts-gauge [results]="[{name: 'b', value: usedPhysicalMemoryPercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
                 <label>Physical Memory {{usedPhysicalMemory | bytes}}/{{totalPhysicalMemory | bytes}}</label>
               </div>
-              <div class="chart-container">
-                <ngx-charts-gauge *ngIf="fileDescriptorUtilization" [results]="[{name: 'fileDescriptors', value: fileDescriptorUtilization}]"
-                  [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
-                <label>File Descriptors {{systemData?.openFileDescriptorCount}}/{{systemData?.maxFileDescriptorCount}}</label>
+              <div class="chart-container" *ngIf="fileDescriptorUtilization">
+                <ngx-charts-gauge [results]="[{name: 'fileDescriptors', value: fileDescriptorUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>File Descriptors {{jvmMetrics['os.openFileDescriptorCount']}}/{{jvmMetrics['os.maxFileDescriptorCount']}}</label>
               </div>
-              <div class="chart-container">
-                <ngx-charts-gauge *ngIf="usedSwapSpacePercent" [results]="[{name: 'swapSpace', value: usedSwapSpacePercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
-                <label>Used Swap {{usedSwapSpace | bytes: 2}}/{{systemData?.totalSwapSpaceSize | bytes}}</label>
+              <div class="chart-container" *ngIf="usedSwapSpacePercent">
+                <ngx-charts-gauge [results]="[{name: 'swapSpace', value: usedSwapSpacePercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
+                <label>Used Swap {{usedSwapSpace | bytes: 2}}/{{jvmMetrics['os.totalSwapSpaceSize'] | bytes}}</label>
               </div>
             </div>
           </mat-card-content>
@@ -42,10 +47,6 @@
           </mat-card-title>
           <mat-card-content>
             <div fxLayout="row wrap" fxLayoutAlign="space-evenly start">
-              <div class="chart-container">
-                <ngx-charts-gauge *ngIf="processCpuUtilization" [results]="[{name: 'cpu', value: processCpuUtilization}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
-                <label>Process CPU Utlilization</label>
-              </div>
               <div class="chart-container">
                 <ngx-charts-gauge *ngIf="usedPhysicalMemoryPercent" [results]="[{name: 'b', value: usedPhysicalMemoryPercent}]" [valueFormatting]="valueAsPercent"></ngx-charts-gauge>
                 <label>Physical Memory {{usedPhysicalMemory | bytes}}/{{totalPhysicalMemory | bytes}}</label>

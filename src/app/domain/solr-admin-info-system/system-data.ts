@@ -9,7 +9,7 @@ export class SystemData {
     openFileDescriptorCount: number;
     processCpuLoad: number;
     processCpuTime: number;
-    systemCpuLoad: string;
+    systemCpuLoad: number;
     systemLoadAverage: number;
     totalPhysicalMemorySize: number;
     totalSwapSpaceSize: number;
