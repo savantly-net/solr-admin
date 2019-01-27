@@ -1,10 +1,17 @@
 # SolrAdmin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.  
+
+This is being developed as a drop-in replacement for the Solr Admin UI included with Solr.  
+I'm actively looking for assistance in design and development.  
+
+[Dashboard](./demo/dashboard.PNG)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.  
+The proxy server will route '/solr/**' requests to `http://localhost:8983/solr  
+So you'll need a local instance of Solr running to have an interactive testing environment.  
 
 ## Code scaffolding
 

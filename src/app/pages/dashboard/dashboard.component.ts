@@ -37,7 +37,10 @@ export class DashboardComponent implements OnInit {
     fileDescriptorUtilization: number;
 
     // GC
-    gcGroups;
+    gcGroups = [];
+
+    // JVM Memory
+    jvmMemoryChartData;
 
     // Initialization
     constructor(private systemService: SystemService, private metrics: SolrAdminMetricsService, public dialog: MatDialog) { }
@@ -69,13 +72,68 @@ export class DashboardComponent implements OnInit {
         this.usedSwapSpace = jvmMetrics['os.totalSwapSpaceSize'] - jvmMetrics['os.freeSwapSpaceSize'];
         this.usedSwapSpacePercent = 100 * (this.usedSwapSpace / jvmMetrics['os.totalSwapSpaceSize']);
         this.processCpuUtilization = 100 * (jvmMetrics['os.processCpuLoad'] / jvmMetrics['os.availableProcessors']);
-        this.processGCData(jvmMetrics);
+        this.processGCData();
+        this.processJvmMemory();
     }
 
-    processGCData(jvmMetrics: any): any {
-        const prefix = 'gc.';
-        const gcFlat: any = this.stripPrefix(prefix, this.filterByPrefix(prefix, jvmMetrics));
-        this.gcGroups = this.flatToGroups(gcFlat);
+    processGCData(): any {
+        const gc = this.jvmMetricsGrouped.gc;
+        Object.getOwnPropertyNames(gc).forEach(gcKey => {
+            this.gcGroups.push({
+                name: gcKey,
+                count: gc[gcKey].count,
+                time: gc[gcKey].time
+            });
+        });
+    }
+
+    processJvmMemory() {
+        this.jvmMemoryChartData = [{
+            name: 'heap',
+            series: [{
+                name: 'committed',
+                value: this.jvmMetricsGrouped.memory.heap.committed
+            }, {
+                name: 'init',
+                value: this.jvmMetricsGrouped.memory.heap.init
+            }, {
+                name: 'max',
+                value: this.jvmMetricsGrouped.memory.heap.max
+            }, {
+                name: 'used',
+                value: this.jvmMetricsGrouped.memory.heap.used
+            }]
+        }, {
+            name: 'non-heap',
+            series: [{
+                name: 'committed',
+                value: this.jvmMetricsGrouped.memory['non-heap'].committed
+            }, {
+                name: 'init',
+                value: this.jvmMetricsGrouped.memory['non-heap'].init
+            }, {
+                name: 'max',
+                value: this.jvmMetricsGrouped.memory['non-heap'].max
+            }, {
+                name: 'used',
+                value: this.jvmMetricsGrouped.memory['non-heap'].used
+            }]
+        }, {
+            name: 'total',
+            series: [{
+                name: 'committed',
+                value: this.jvmMetricsGrouped.memory.total.committed
+            }, {
+                name: 'init',
+                value: this.jvmMetricsGrouped.memory.total.init
+            }, {
+                name: 'max',
+                value: this.jvmMetricsGrouped.memory.total.max
+            }, {
+                name: 'used',
+                value: this.jvmMetricsGrouped.memory.total.used
+            }]
+        }];
     }
 
     flatToGroups(object: any): any {
@@ -100,25 +158,6 @@ export class DashboardComponent implements OnInit {
         }
     }
 
-    stripPrefix(prefix: String, object: any): any {
-        const result = {};
-        Object.getOwnPropertyNames(object).forEach((key) => {
-            result[key.substring(prefix.length)] = object[key];
-        });
-        return result;
-    }
-
-    filterByPrefix(prefix: string, object: any): any {
-        const result = {};
-        const filteredKeys = Object.getOwnPropertyNames(object).filter((key) => {
-            return key.startsWith(prefix);
-        });
-        filteredKeys.forEach((key) => {
-            result[key] = object[key];
-        });
-        return result;
-    }
-
     handleResponse(data: SolrSystemResponse) {
         this.data = data;
         this.processSystemData(data.system);
@@ -138,6 +177,10 @@ export class DashboardComponent implements OnInit {
 
     valueAsMemorySize(value) {
         return new BytesPipe().transform(value);
+    }
+
+    valueAsMS(value) {
+        return `${Math.round(value).toLocaleString()}ms`;
     }
 
     // Event Handlers
