@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This is being developed as a drop-in replacement for the Solr Admin UI included with Solr.  
 I'm actively looking for assistance in design and development.  
 
-[Dashboard](./demo/dashboard.PNG)
+![Dashboard](./demo/dashboard.PNG)
 
 ## Development server
 
