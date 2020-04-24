@@ -15,8 +15,7 @@ class Navbar extends Component {
           </button>
           <ul className="navbar-nav navbar-nav-left header-links">
             <li className="nav-item d-none d-md-flex">
-              <a href="!#" onClick={evt =>evt.preventDefault()} className="nav-link">Example Link
-              </a>
+              <a href="!#" onClick={evt =>evt.preventDefault()} className="nav-link">Solr Documentation</a>
             </li>
           </ul>
           <ul className="navbar-nav navbar-nav-right ml-lg-auto">

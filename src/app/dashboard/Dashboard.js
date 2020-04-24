@@ -257,14 +257,14 @@ toggleProBanner() {
                     <i className="mdi mdi-cube text-danger icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Total Revenue</p>
+                    <p className="mb-0 text-right text-dark">Used Memory</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">$65,650</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">653mB</h3>
                     </div>
                   </div>
                 </div>
                 <p className="text-muted mt-3 mb-0">
-                  <i className="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth </p>
+                  <i className="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% Utilization </p>
               </div>
             </div>
           </div>
@@ -276,14 +276,14 @@ toggleProBanner() {
                     <i className="mdi mdi-receipt text-warning icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Orders</p>
+                    <p className="mb-0 text-right text-dark">Requests</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">3455</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">34554</h3>
                     </div>
                   </div>
                 </div>
                 <p className="text-muted mt-3 mb-0">
-                  <i className="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Product-wise sales </p>
+                  <i className="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Qualifier </p>
               </div>
             </div>
           </div>
@@ -295,14 +295,14 @@ toggleProBanner() {
                     <i className="mdi mdi-poll-box text-success icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Sales</p>
+                    <p className="mb-0 text-right text-dark">Used Memory</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">5693</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">569mB</h3>
                     </div>
                   </div>
                 </div>
                 <p className="text-muted mt-3 mb-0">
-                  <i className="mdi mdi-calendar mr-1" aria-hidden="true"></i> Weekly Sales </p>
+                  <i className="mdi mdi-calendar mr-1" aria-hidden="true"></i> 56% Utilization</p>
               </div>
             </div>
           </div>
@@ -314,14 +314,14 @@ toggleProBanner() {
                     <i className="mdi mdi-account-box-multiple text-info icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Employees</p>
+                    <p className="mb-0 text-right text-dark">Requests</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">246</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">24634</h3>
                     </div>
                   </div>
                 </div>
                 <p className="text-muted mt-3 mb-0">
-                  <i className="mdi mdi-reload mr-1" aria-hidden="true"></i> Product-wise sales </p>
+                  <i className="mdi mdi-reload mr-1" aria-hidden="true"></i> Qualifier </p>
               </div>
             </div>
           </div>
@@ -331,15 +331,15 @@ toggleProBanner() {
             <div className="card">
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                  <h2 className="card-title mb-0">Product Analysis</h2>
+                  <h2 className="card-title mb-0">Cache Utilization</h2>
                   <div className="wrapper d-flex">
                     <div className="d-flex align-items-center mr-3">
                       <span className="dot-indicator bg-success"></span>
-                      <p className="mb-0 ml-2 text-muted">Product</p>
+                      <p className="mb-0 ml-2 text-muted">Cached</p>
                     </div>
                     <div className="d-flex align-items-center">
                       <span className="dot-indicator bg-primary"></span>
-                      <p className="mb-0 ml-2 text-muted">Resources</p>
+                      <p className="mb-0 ml-2 text-muted">Non-cached</p>
                     </div>
                   </div>
                 </div>
