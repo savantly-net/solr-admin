@@ -295,14 +295,12 @@ toggleProBanner() {
                     <i className="mdi mdi-poll-box text-success icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Used Memory</p>
+                    <p className="mb-0 text-right text-dark">CPU Utilization</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">569mB</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">23%</h3>
                     </div>
                   </div>
                 </div>
-                <p className="text-muted mt-3 mb-0">
-                  <i className="mdi mdi-calendar mr-1" aria-hidden="true"></i> 56% Utilization</p>
               </div>
             </div>
           </div>
@@ -314,9 +312,9 @@ toggleProBanner() {
                     <i className="mdi mdi-account-box-multiple text-info icon-lg"></i>
                   </div>
                   <div className="float-right">
-                    <p className="mb-0 text-right text-dark">Requests</p>
+                    <p className="mb-0 text-right text-dark">Cache Hits</p>
                     <div className="fluid-container">
-                      <h3 className="font-weight-medium text-right mb-0 text-dark">24634</h3>
+                      <h3 className="font-weight-medium text-right mb-0 text-dark">14323</h3>
                     </div>
                   </div>
                 </div>
