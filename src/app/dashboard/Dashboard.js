@@ -248,16 +248,6 @@ toggleProBanner() {
   render () {
     return (
       <div>
-        <div className="row proBanner">
-          <div className="col-12">
-            <span className="d-flex align-items-center purchase-popup">
-              <p>Like what you see? Check out our premium version for more.</p>
-              <a href="https://github.com/BootstrapDash/StarAdmin-Free-React-Admin-Template" target="_blank" rel="noopener noreferrer" className="btn ml-auto download-button">Download Free Version</a>
-              <a href="http://www.bootstrapdash.com/demo/star-admin-pro-react/template/demo_1/preview/dashboard" rel="noopener noreferrer" target="_blank" className="btn purchase-button">Upgrade To Pro</a>
-              <i className="mdi mdi-close bannerClose" onClick={this.toggleProBanner}></i>
-            </span>
-          </div>
-        </div>
         <div className="row">
           <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
             <div className="card card-statistics">
