@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   sodipodi:docname="logo-mini.svg"
+   id="svg863"
+   version="1.1"
+   height="35"
+   width="35">
+  <metadata
+     id="metadata867">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg863"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="41.062844"
+     inkscape:cx="33.301369"
+     inkscape:zoom="5.6557462"
+     showgrid="false"
+     id="namedview865"
+     inkscape:window-height="810"
+     inkscape:window-width="1342"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs841">
+    <clipPath
+       id="clip1">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0,36 h 49 v 66.65234 H 0 Z"
+         id="svg_1" />
+    </clipPath>
+    <clipPath
+       id="clip2">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 53,53 h 47 v 49.65234 H 53 Z"
+         id="svg_2" />
+    </clipPath>
+    <clipPath
+       id="clip3">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 106,35 h 17 v 67.65234 h -17 z"
+         id="svg_3" />
+    </clipPath>
+    <clipPath
+       id="clip4">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 28.011719,29 h 40.00391 v 23 h -40.00391 z"
+         id="svg_4" />
+    </clipPath>
+  </defs>
+  <g
+     transform="translate(-0.999999)"
+     id="g846">
+    <title
+       id="title843">background</title>
+    <rect
+       x="-1"
+       y="-1"
+       width="72"
+       height="70"
+       id="canvas_background"
+       fill="none" />
+  </g>
+  <g
+     inkscape:export-ydpi="183.31749"
+     inkscape:export-xdpi="183.31749"
+     transform="matrix(0.52226622,0,0,0.52214452,-0.5222657,0)"
+     id="g861">
+    <title
+       id="title848">Layer 1</title>
+    <g
+       id="surface1">
+      <g
+         id="svg_21">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 58.921879,10.61328 -33,35.67578 41.47265,-19.13281 c -1.22656,-6.33203 -4.23047,-12.02344 -8.47265,-16.54297"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_12" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 34.437499,0 c -4.57031,0 -8.92578,0.91797 -12.89844,2.57422 l -4.42968,37.3125 22.1289,-39.53906 C 37.667969,0.12109 36.070309,0 34.437499,0"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_13" />
+        <g
+           clip-path="url(#clip4)"
+           clip-rule="nonzero"
+           id="svg_14">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 67.726559,29.21094 -39.30078,21.99219 36.8711,-4.375 c 1.75,-4.06641 2.71875,-8.54297 2.71875,-13.25 0,-1.48047 -0.10547,-2.9375 -0.28907,-4.36719"
+             fill="rgb(85.639954%,20.640564%,13.365173%)"
+             fill-rule="nonzero"
+             id="svg_15" />
+        </g>
+        <path
+           inkscape:connector-curvature="0"
+           d="m 53.238279,61.40625 c 4.39063,-2.97266 8.03516,-6.95703 10.60938,-11.61719 l -34.5586,6.85938 z"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_16" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 41.261719,0.69531 22.023439,42.39063 57.707029,9.38281 C 53.234379,5.07813 47.574219,2 41.261719,0.69531"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_17" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 37.246099,67.03125 c 3.71875,-0.30859 7.26171,-1.21484 10.53906,-2.63672 l -19.35938,-2.29687 z"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_18" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 3.832029,19.77344 C 2.320309,23.11719 1.339849,26.75 0.999999,30.56641 l 5.21485,9.32031 z"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_19" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 18.628909,3.95313 c -4.73828,2.53515 -8.79297,6.16796 -11.83203,10.5664 l 4.86718,24.50391 z"
+           fill="rgb(85.639954%,20.640564%,13.365173%)"
+           fill-rule="nonzero"
+           id="svg_20" />
+      </g>
+    </g>
+  </g>
+</svg>
